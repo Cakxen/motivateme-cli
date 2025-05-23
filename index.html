@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MotivateMe GUI</title>
+</head>
+<body>
+  <h1>MotivateMe Electron GUI</h1>
+
+  <label for="category">Choose category:</label>
+  <select id="category">
+    <option value="default">Default</option>
+    <option value="funny">Funny</option>
+    <option value="deep">Deep</option>
+  </select>
+
+  <button id="quoteBtn">Get Quote</button>
+
+  <p id="quoteDisplay" style="margin-top: 20px; font-size: 1.2em;"></p>
+
+  <script>
+    const button = document.getElementById('quoteBtn');
+    const display = document.getElementById('quoteDisplay');
+    const select = document.getElementById('category');
+
+    button.addEventListener('click', () => {
+      const category = select.value;
+      const quote = window.motivateme.getQuote(category);
+      display.textContent = `💡 ${quote}`;
+    });
+  </script>
+</body>
+</html>

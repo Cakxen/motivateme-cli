@@ -1,8 +1,40 @@
-id: cakxen/motivateme-cli
-name: motivateme-cli
-description: A simple CLI tool that displays motivational messages using Node.js.
-language: javascript
+name: cakxen-motivateme-gui
+version: 1.0.0
+description: MotivateMe GUI - An Electron app that shows motivational quotes with categories and colors.
 license: MIT
-repository: https://github.com/Cakxen/motivateme-cli
-maintainers:
-  - github: Cakxen
+author: Lorrain Cakxen
+homepage: https://github.com/your-github-username/motivateme-gui
+repository:
+  type: git
+  url: git+https://github.com/your-github-username/motivateme-gui.git
+keywords:
+  - motivate
+  - quotes
+  - electron
+  - cli
+  - gui
+bin:
+  motivateme-gui: main.js
+scripts:
+  start: electron .
+files:
+  - index.html
+  - main.js
+  - preload.js
+  - package.json
+  - node_modules/
+  - assets/
+dependencies:
+  electron: "^25.3.1"
+  colors: "^1.4.0"
+build:
+  targets:
+    - electron
+  output: dist/
+  options:
+    platform: win32,darwin,linux
+    arch: x64,arm64
+publish:
+  provider: npm
+  access: public
+  registry: https://registry.npmjs.org/

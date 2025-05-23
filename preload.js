@@ -1,4 +1,4 @@
-import readline from 'readline';
+import { contextBridge } from 'electron';
 
 const quotes = {
   funny: [
@@ -15,29 +15,12 @@ const quotes = {
   ],
 };
 
-export function getRandomQuote(category = 'default') {
+function getRandomQuote(category = 'default') {
   const list = quotes[category] || quotes['default'];
   const randomQuote = list[Math.floor(Math.random() * list.length)];
   return randomQuote;
 }
 
-function cli() {
-  const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-  });
-
-  console.log('Welcome to cakxen-motivateme-cli!');
-  console.log('Choose a category: funny, deep, default');
-
-  rl.question('Category: ', (answer) => {
-    const quote = getRandomQuote(answer.trim().toLowerCase());
-    console.log('\n💡 Your quote:');
-    console.log(quote);
-    rl.close();
-  });
-}
-
-if (process.argv[1].endsWith('index.mjs')) {
-  cli();
-}
+contextBridge.exposeInMainWorld('motivateme', {
+  getQuote: (category) => getRandomQuote(category)
+});
