@@ -1,12 +1,23 @@
 {
-  "name": "motivateme-cli",
-  "version": "1.0.0",
-  "description": "A simple CLI tool that prints motivational quotes.",
+  "name": "cakxen-motivateme-cli",
+  "version": "1.1.0",
+  "description": "A simple CLI tool that displays motivational quotes",
   "main": "index.js",
+  "bin": {
+    "motivateme": "index.js"
+  },
   "scripts": {
     "start": "node index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT"
+  "keywords": [
+    "motivation",
+    "cli",
+    "tool",
+    "quotes"
+  ],
+  "author": "Lorrain H Thangliana <lorraincakxen3@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.4.1"
+  }
 }
