@@ -1,0 +1,8 @@
+id: cakxen/motivateme-cli
+name: motivateme-cli
+description: A simple CLI tool that displays motivational messages using Node.js.
+language: javascript
+license: MIT
+repository: https://github.com/Cakxen/motivateme-cli
+maintainers:
+  - github: Cakxen
