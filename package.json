@@ -1,0 +1,12 @@
+{
+  "name": "motivateme-cli",
+  "version": "1.0.0",
+  "description": "A simple CLI tool that prints motivational quotes.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
