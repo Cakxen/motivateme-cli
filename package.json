@@ -1,6 +1,6 @@
 {
   "name": "cakxen-motivateme-cli",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "A CLI to motivate you with quotes",
   "type": "module",
   "bin": {
